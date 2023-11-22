@@ -12,8 +12,8 @@
             <a href="index.html" class="logo"><img src="images/png/logo.png"><p>tajam</p></a>
             <nav class="header_links">
                 <ul>
-                    <li><a href="">HOME</a></li>
-                    <li><a href="">ABOUT</a></li>
+                    <li><a href="index.html">HOME</a></li>
+                    <li><a href="#our_story-section">ABOUT</a></li>
                     <li><a href="">EXPERTISE</a></li>
                     <li><a href="">TEAMS</a></li>
                     <li><a href="">WORKS</a></li>
@@ -44,8 +44,9 @@
         </section>
         <section id="watch-section">
             <img id="play" onclick="playVideo()" src="images/png/play.png">
-          <iframe id="myVideo" width="850" height="500" src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="Rick Astley - Never Gonna Give You Up (Official Music Video)" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen hidden></iframe>
+          
             <h3 id="story" >WATCH OUR STORY</h3>
+            <iframe id="myVideo" width="850" height="500" src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="Rick Astley - Never Gonna Give You Up (Official Music Video)" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen hidden></iframe>
         </section>
         <section id="expertise-section">expertise section</section>
         <section id="team-section">team section</section>
@@ -81,14 +82,19 @@
         <script>
         function playVideo() {
         var video = document.getElementById("myVideo");
-        video.hidden = false;
-        video.autoplay();
-        var play = document.getElementById("play");
-        play.hidden = true;
-        var story = document.getElementById("story");
-        story.hidden = true;
+        if(video.hidden === false)
+        {
+            video.hidden = true;
+            document.getElementById("play").src = "images/png/play.png";
+            document.getElementById("story").innerHTML = "WATCH OUR STORY";
+        }
+        else
+        {
+            video.hidden = false;
+            document.getElementById("play").src = "images/png/play.png";
+            document.getElementById("story").innerHTML = "WATCH OUR STORY";
+        } 
 }
-      
 
         </script>
 </body>
