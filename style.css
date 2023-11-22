@@ -112,6 +112,14 @@ nav ul li a{
     flex-wrap: wrap;
 }
 
+.myVideo{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    z-index: -1;
+}
+
 .our_story_image{
     padding-right: 8rem;
 }
