@@ -94,8 +94,13 @@
             video.pause();
             document.getElementById("play").src = "images/png/play.png";
             document.getElementById("story").innerHTML = "WATCH OUR STORY";
-            video.pause();
+            stop();
         } 
+
+        function stop() {
+         let video = document.getElementById("myVideo")
+         video.contentWindow.postMessage( '{"event":"command", "func":"stopVideo", "args":""}', '*');
+      }
 }
 
         </script>
